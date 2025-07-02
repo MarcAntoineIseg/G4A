@@ -37,10 +37,19 @@ async def check_and_refresh_token(user_id: str, tokens: dict):
     now = datetime.datetime.now(datetime.timezone.utc)
 
     if expiry < now:
+        print("Token expired. Refreshing...")
         new_token_data = await refresh_access_token(tokens["refresh_token"])
+        
+        # Calculate new expiry
         new_expiry = (now + datetime.timedelta(seconds=new_token_data["expires_in"])).isoformat()
+        
+        # Update Supabase
         #update_user_tokens(user_id, new_token_data["access_token"], new_expiry)
+
+        # Return updated token set
         tokens["access_token"] = new_token_data["access_token"]
         tokens["token_expires_at"] = new_expiry
+    else:
+        print("Token still valid.")
 
     return tokens
