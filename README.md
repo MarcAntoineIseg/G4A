@@ -49,7 +49,6 @@ Retourne le nombre de sessions des 30 derniers jours pour l’utilisateur authen
 ````
 
 #### Response
-
 ```
 {
   "message": "Session count retrieved",
