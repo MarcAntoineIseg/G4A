@@ -99,7 +99,7 @@ Ce serveur suppose que les identifiants OAuth de l'utilisateur (tokens d’accè
 
 Seule la métrique `get-sessions` est implémentée pour les tests initiaux.
 
-Des métriques GA4 et outils supplémentaires (ex. `get-top-pages`) peuvent être ajoutés de manière modulaire.
+Des métriques GA4 et outils supplémentaires (ex. `get-top-pages, get-top-countries, get-retention-data`) peuvent être ajoutés de manière modulaire.
 
 Ce serveur est conçu pour s'intégrer à **Eliott** et permet un accès dynamique et sécurisé aux données via des agents LLM.
 
